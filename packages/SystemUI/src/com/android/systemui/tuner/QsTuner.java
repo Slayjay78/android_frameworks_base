@@ -203,6 +203,7 @@ public class QsTuner extends Fragment implements Callback {
         else if (spec.equals("brightness")) return R.string.quick_settings_brightness_label;
         else if (spec.equals("screenOff")) return R.string.quick_settings_screen_off_label;
         else if (spec.equals("screenshot")) return R.string.quick_settings_screenshot_label;
+        else if (spec.equals("sync")) return R.string.quick_settings_sync_label;
         else if (spec.equals("volume")) return R.string.quick_settings_volume_panel_label;
         else if (spec.equals("headsup")) return R.string.quick_settings_heads_up_label;
         return 0;
@@ -446,6 +447,7 @@ public class QsTuner extends Fragment implements Callback {
             else if (mSpec.equals("brightness")) return R.drawable.ic_qs_brightness_auto_off_alpha;
             else if (mSpec.equals("screenOff")) return R.drawable.ic_qs_power;
             else if (mSpec.equals("screenshot")) return R.drawable.ic_qs_screenshot;
+            else if (mSpec.equals("sync")) return R.drawable.ic_qs_sync_on;
             else if (mSpec.equals("volume")) return R.drawable.ic_qs_volume_panel;
             else if (mSpec.equals("headsup")) return R.drawable.ic_qs_heads_up_on;
             return R.drawable.android;
