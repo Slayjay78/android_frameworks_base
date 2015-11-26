@@ -3508,12 +3508,6 @@ public final class Settings {
         public static final String NAVIGATION_BAR_SHOW = "navigation_bar_show";
 
         /**
-         * Show search bar in recents
-         * @hide
-         */
-        public static final String RECENTS_SHOW_SEARCH_BAR = "recents_show_search_bar";
-
-        /**
          * Display style of the status bar battery information
          * 0: Display the battery an icon in portrait mode
          * 2: Display the battery as a circle
