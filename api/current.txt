@@ -1941,6 +1941,7 @@ package android {
     field public static final int TextAppearance_Material_Inverse = 16974328; // 0x10301f8
     field public static final int TextAppearance_Material_Large = 16974329; // 0x10301f9
     field public static final int TextAppearance_Material_Large_Inverse = 16974330; // 0x10301fa
+    field public static final int TextAppearance_Material_Large_PowerMenu = 16974569; // 0x10302e9
     field public static final int TextAppearance_Material_Medium = 16974331; // 0x10301fb
     field public static final int TextAppearance_Material_Medium_Inverse = 16974332; // 0x10301fc
     field public static final int TextAppearance_Material_Menu = 16974333; // 0x10301fd
@@ -1954,6 +1955,7 @@ package android {
     field public static final int TextAppearance_Material_SearchResult_Title = 16974341; // 0x1030205
     field public static final int TextAppearance_Material_Small = 16974342; // 0x1030206
     field public static final int TextAppearance_Material_Small_Inverse = 16974343; // 0x1030207
+    field public static final int TextAppearance_Material_Small_PowerMenu = 16974570; // 0x10302ea
     field public static final int TextAppearance_Material_Subhead = 16974344; // 0x1030208
     field public static final int TextAppearance_Material_Title = 16974345; // 0x1030209
     field public static final int TextAppearance_Material_Widget = 16974347; // 0x103020b
