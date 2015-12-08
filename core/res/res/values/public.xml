@@ -2680,7 +2680,4 @@
     <public type="id" name="accessibilityActionContextClick" id="0x0102003c" />
 
     <public type="string" name="fingerprint_icon_content_description" />
-
-    <public type="style" name="TextAppearance.Material.Large.PowerMenu" id="0x10302e9" />
-    <public type="style" name="TextAppearance.Material.Small.PowerMenu" id="0x10302ea"  />
 </resources>

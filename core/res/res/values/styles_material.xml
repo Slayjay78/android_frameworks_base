@@ -262,11 +262,6 @@ please see styles_device_defaults.xml.
         <item name="textColorLink">?attr/textColorLinkInverse</item>
     </style>
 
-    <style name="TextAppearance.Material.Large.PowerMenu">
-        <item name="textSize">@dimen/text_size_large_material</item>
-        <item name="textColor">?attr/textColorPrimary</item>
-    </style>
-
     <style name="TextAppearance.Material.Medium">
         <item name="textSize">@dimen/text_size_medium_material</item>
         <item name="textColor">?attr/textColorSecondary</item>
@@ -289,11 +284,6 @@ please see styles_device_defaults.xml.
         <item name="textColorHint">?attr/textColorHintInverse</item>
         <item name="textColorHighlight">?attr/textColorHighlightInverse</item>
         <item name="textColorLink">?attr/textColorLinkInverse</item>
-    </style>
-
-    <style name="TextAppearance.Material.Small.PowerMenu">
-        <item name="textSize">@dimen/text_size_small_material</item>
-        <item name="textColor">?attr/textColorTertiary</item>
     </style>
 
     <style name="TextAppearance.Material.SearchResult" />
