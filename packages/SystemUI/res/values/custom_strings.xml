@@ -106,4 +106,8 @@
     <!-- Notification which notifies user flashlight is enabled -->
     <string name="quick_settings_tile_flashlight_not_title">Flashlight is on</string>
     <string name="quick_settings_tile_flashlight_not_summary">Tap to turn off</string>
+
+    <!-- SystemUI Tuner Parts -->
+    <string name="systemui_tuner_statusbar_title">Statusbar Items</string>
+    <string name="systemui_tuner_qs_title">Quick Settings</string>
 </resources>
