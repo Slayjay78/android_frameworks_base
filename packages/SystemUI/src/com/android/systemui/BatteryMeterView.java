@@ -953,9 +953,11 @@ public class BatteryMeterView extends View implements DemoMode,
             }
 
             boolean continueAnimation = mIsAnimating || mAnimOffset != 0;
+
             if (continueAnimation) {
                 mAnimOffset += 3;
             }
+
             if (continueAnimation) {
                 postInvalidateDelayed(50);
             }
