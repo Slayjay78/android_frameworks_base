@@ -19,6 +19,10 @@
   <!-- Intent chooser -->
   <java-symbol type="id" name="filtered_item_container" />
 
+  <!-- Screen record -->
+  <java-symbol type="drawable" name="ic_lock_screen_record" />
+  <java-symbol type="string" name="global_action_screen_record" />
+
   <!-- Notification and battery light -->
   <java-symbol type="bool" name="config_intrusiveNotificationLed" />
   <java-symbol type="bool" name="config_multiColorNotificationLed" />
