@@ -3227,7 +3227,6 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         WallpaperManager wm = (WallpaperManager)
                 mContext.getSystemService(Context.WALLPAPER_SERVICE);
         mKeyguardWallpaper = null;
-        wm.forgetLoadedKeyguardWallpaper();
 
         animateCollapsePanels();
         updatePublicMode();
