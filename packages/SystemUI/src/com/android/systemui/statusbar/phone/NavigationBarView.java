@@ -946,8 +946,6 @@ public class NavigationBarView extends LinearLayout {
                     Settings.System.DIM_NAV_BUTTONS_ANIMATE_DURATION), false, this);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.DIM_NAV_BUTTONS_TOUCH_ANYWHERE), false, this);
-            resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.DOUBLE_TAP_SLEEP_NAVBAR), false, this);
 
             // intialize mModlockDisabled
             onChange(false);
@@ -994,9 +992,6 @@ public class NavigationBarView extends LinearLayout {
                     UserHandle.USER_CURRENT);
             mDimNavButtonsTouchAnywhere = (Settings.System.getIntForUser(resolver,
                     Settings.System.DIM_NAV_BUTTONS_TOUCH_ANYWHERE, 0,
-                    UserHandle.USER_CURRENT) == 1);
-            mDoubleTapToSleep = (Settings.System.getIntForUser(resolver,
-                    Settings.System.DOUBLE_TAP_SLEEP_NAVBAR, 0,
                     UserHandle.USER_CURRENT) == 1);
         }
     }
