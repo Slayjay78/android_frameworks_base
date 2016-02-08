@@ -48,6 +48,13 @@
     <string name="accessibility_screenshot">ScreenShot</string>
     <string name="accessibility_expand">Immersive Mode</string>
 
+    <!-- Dialog title for navigation bar button selection -->
+    <string name="navbar_app_picker">Application picker</string>
+
+    <!-- Content description of the Application picker button for accessibility
+    (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_app_picker">Application picker</string>
+
     <!-- Quick settings -->
     <string name="quick_settings_brightness_label">Brightness</string>
     <string name="quick_settings_heads_up_label">Heads up</string>
