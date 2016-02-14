@@ -144,6 +144,33 @@ public class KeyguardStatusView extends GridLayout {
                 getResources().getDimensionPixelSize(R.dimen.widget_label_font_size));
     }
 
+    public void hideLockscreenItems() {
+        if (Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.HIDE_LOCKSCREEN_CLOCK, 1) == 1) {
+            mClockView = (TextClock) findViewById(R.id.clock_view);
+            mClockView.setVisibility(View.VISIBLE);
+        } else {
+            mClockView = (TextClock) findViewById(R.id.clock_view);
+            mClockView.setVisibility(View.GONE);
+        }
+        if (Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.HIDE_LOCKSCREEN_DATE, 1) == 1) {
+            mDateView = (TextClock) findViewById(R.id.date_view);
+            mDateView.setVisibility(View.VISIBLE);
+        } else {
+            mDateView = (TextClock) findViewById(R.id.date_view);
+            mDateView.setVisibility(View.GONE);
+        }
+        if (Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.HIDE_LOCKSCREEN_ALARM, 1) == 1) {
+            mAlarmStatusView = (TextView) findViewById(R.id.alarm_status);
+            mAlarmStatusView.setVisibility(View.VISIBLE);
+        } else {
+            mAlarmStatusView = (TextView) findViewById(R.id.alarm_status);
+            mAlarmStatusView.setVisibility(View.GONE);
+        }
+    }
+
     public void refreshTime() {
         mDateView.setFormat24Hour(Patterns.dateView);
         mDateView.setFormat12Hour(Patterns.dateView);
@@ -159,7 +186,7 @@ public class KeyguardStatusView extends GridLayout {
 
         refreshTime();
         refreshAlarmStatus(nextAlarm);
-        updateSettings(false);
+        hideLockscreenItems();
     }
 
     void refreshAlarmStatus(AlarmManager.AlarmClockInfo nextAlarm) {
@@ -200,7 +227,7 @@ public class KeyguardStatusView extends GridLayout {
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         KeyguardUpdateMonitor.getInstance(mContext).registerCallback(mInfoCallback);
-        updateSettings(false);
+        hideLockscreenItems();
     }
 
     @Override
@@ -223,43 +250,6 @@ public class KeyguardStatusView extends GridLayout {
     @Override
     public boolean hasOverlappingRendering() {
         return false;
-    }
-
-    private void updateSettings(boolean forceHide) {
-        final ContentResolver resolver = getContext().getContentResolver();
-        final Resources res = getContext().getResources();
-        AlarmManager.AlarmClockInfo nextAlarm =
-                mAlarmManager.getNextAlarmClock(UserHandle.USER_CURRENT);
-
-        boolean showAlarm = Settings.System.getIntForUser(resolver,
-                Settings.System.HIDE_LOCKSCREEN_ALARM, 1, UserHandle.USER_CURRENT) == 1;
-        boolean showClock = Settings.System.getIntForUser(resolver,
-                Settings.System.HIDE_LOCKSCREEN_CLOCK, 1, UserHandle.USER_CURRENT) == 1;
-        boolean showDate = Settings.System.getIntForUser(resolver,
-                Settings.System.HIDE_LOCKSCREEN_DATE, 1, UserHandle.USER_CURRENT) == 1;
-        }
-
-        if (showClock) {
-            mClockView = (TextClock) findViewById(R.id.clock_view);
-            mClockView.setVisibility(View.VISIBLE);
-        } else {
-            mClockView = (TextClock) findViewById(R.id.clock_view);
-            mClockView.setVisibility(View.GONE);
-        }
-        if (showDate) {
-            mDateView = (TextClock) findViewById(R.id.date_view);
-            mDateView.setVisibility(View.VISIBLE);
-        } else {
-            mDateView = (TextClock) findViewById(R.id.date_view);
-            mDateView.setVisibility(View.GONE);
-        }
-        if (showAlarm && nextAlarm != null) {
-            mAlarmStatusView = (TextView) findViewById(R.id.alarm_status);
-            mAlarmStatusView.setVisibility(View.VISIBLE);
-        } else {
-            mAlarmStatusView = (TextView) findViewById(R.id.alarm_status);
-            mAlarmStatusView.setVisibility(View.GONE);
-        }
     }
 
     // DateFormat.getBestDateTimePattern is extremely expensive, and refresh is called often.
