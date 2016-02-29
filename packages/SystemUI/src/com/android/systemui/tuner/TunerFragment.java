@@ -17,14 +17,19 @@ package com.android.systemui.tuner;
 
 import android.app.AlertDialog;
 import android.app.FragmentTransaction;
+import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
+import android.database.ContentObserver; 
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceGroup;
+import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.view.Menu;
@@ -40,14 +45,24 @@ public class TunerFragment extends PreferenceFragment {
 
     public static final String TAG = "TunerFragment";
 
+    private static final String SHOW_BLUETOOTH_ICON = "show_bluetooth_icon";
+
+    private SwitchPreference mShowBtConnected;
+
     private final SettingObserver mSettingObserver = new SettingObserver();
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.tuner_prefs);
+        final ContentResolver resolver = getActivity().getContentResolver();
+
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
         setHasOptionsMenu(true);
+
+        mShowBtConnected = (SwitchPreference) findPreference(SHOW_BLUETOOTH_ICON);
+        mShowBtConnected.setChecked((Settings.System.getInt(resolver,
+                Settings.System.SHOW_BLUETOOTH_ICON, 0) == 1));
     }
 
     @Override
@@ -112,5 +127,16 @@ public class TunerFragment extends PreferenceFragment {
         public void onChange(boolean selfChange, Uri uri, int userId) {
             super.onChange(selfChange, uri, userId);
         }
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if  (preference == mShowBtConnected) {
+            boolean checked = ((SwitchPreference)preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SHOW_BLUETOOTH_ICON, checked ? 1:0);
+            return true;
+        }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 }

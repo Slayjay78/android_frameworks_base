@@ -110,4 +110,16 @@
     <!-- SystemUI Tuner Parts -->
     <string name="systemui_tuner_statusbar_title">Statusbar Items</string>
     <string name="systemui_tuner_qs_title">Quick Settings</string>
+
+     <!-- Statusbar Vibrate silent switch -->
+    <string name="status_bar_vibsil">Vibrate &amp; silent</string>
+
+    <!-- headset icon switch -->
+    <string name="status_bar_headset">Wired headset</string>
+
+    <!-- vpn icon switch -->
+    <string name="status_bar_vpn">VPN</string>
+
+    <!-- bt only connected switch -->
+    <string name="status_bar_btcon">Bluetooth only when connected</string>
 </resources>
