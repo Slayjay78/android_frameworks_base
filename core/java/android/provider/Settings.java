@@ -3981,6 +3981,12 @@ public final class Settings {
         public static final String SHOW_BLUETOOTH_ICON = "show_bluetooth_icon";
 
         /**
+         * Override and forcefully disable the fullscreen keyboard
+         * @hide
+         */
+        public static final String DISABLE_FULLSCREEN_KEYBOARD = "disable_fullscreen_keyboard";
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
