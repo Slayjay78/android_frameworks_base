@@ -25,4 +25,8 @@
     <!-- Do the battery/notification LEDs support pulsing?
          Used to decide if we show pulse settings -->
     <bool name="config_ledCanPulse">true</bool>
+
+    <!-- BatteryLED fast charge -->
+    <integer name="config_chargingFastThreshold">1500000</integer>
+
 </resources>

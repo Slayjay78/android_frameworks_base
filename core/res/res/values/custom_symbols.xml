@@ -89,4 +89,7 @@
   <java-symbol type="drawable" name="ic_shortcut_action_screenshot" />
   <java-symbol type="drawable" name="ic_shortcut_action_search" />
 
+  <!-- BatteryLED fast charge -->
+  <java-symbol type="integer" name="config_chargingFastThreshold" />
+
 </resources>
