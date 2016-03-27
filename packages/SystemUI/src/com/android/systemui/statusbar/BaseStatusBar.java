@@ -183,7 +183,6 @@ public abstract class BaseStatusBar extends SystemUI implements
     private float mFontScale;
 
     protected boolean mUseHeadsUp = false;
-    protected boolean mHeadsUpUserEnabled = false;
     protected boolean mHeadsUpTicker = false;
     protected boolean mDisableNotificationAlerts = false;
 
@@ -2054,7 +2053,7 @@ public abstract class BaseStatusBar extends SystemUI implements
             entry.icon.set(ic);
             inflateViews(entry, mStackScroller);
         }
-        if (mUseHeadsUp && mHeadsUpUserEnabled) {
+        if (mUseHeadsUp) {
             updateHeadsUp(key, entry, shouldInterrupt, alertAgain);
         }
         mNotificationData.updateRanking(ranking);
