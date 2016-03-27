@@ -124,15 +124,8 @@ public class StatusBarIconController implements Tunable {
         mNotificationIcons.setOverflowIndicator(mMoreIcon);
         mStatusIconsKeyguard = (LinearLayout) keyguardStatusBar.findViewById(R.id.statusIcons);
         mBatteryMeterView = (BatteryMeterView) statusBar.findViewById(R.id.battery);
-<<<<<<< HEAD
         mCarrier = (TextView) statusBar.findViewById(R.id.statusbar_carrier_text);
-=======
-        mClock = (TextView) statusBar.findViewById(R.id.clock);
-        mCenterClockLayout = (LinearLayout)statusBar.findViewById(R.id.center_clock_layout);
-        mCclock = (TextView) statusBar.findViewById(R.id.center_clock);
-        mLeftClock = (TextView) statusBar.findViewById(R.id.left_clock);
         mNetworkTraffic = (NetworkTraffic) statusBar.findViewById(R.id.networkTraffic);
->>>>>>> 3c3cedb... remove network coloring and make network meter play nice with dark mode
         mLinearOutSlowIn = AnimationUtils.loadInterpolator(mContext,
                 android.R.interpolator.linear_out_slow_in);
         mFastOutSlowIn = AnimationUtils.loadInterpolator(mContext,
@@ -413,13 +406,9 @@ public class StatusBarIconController implements Tunable {
         mSignalCluster.setIconTint(mIconTint, mDarkIntensity);
         mMoreIcon.setImageTintList(ColorStateList.valueOf(mIconTint));
         mBatteryMeterView.setDarkIntensity(mDarkIntensity);
-<<<<<<< HEAD
         mClockController.setTextColor(mIconTint);
         mCarrier.setTextColor(mIconTint);
-=======
-        mClock.setTextColor(mIconTint);
         mNetworkTraffic.setDarkIntensity(mDarkIntensity);
->>>>>>> 3c3cedb... remove network coloring and make network meter play nice with dark mode
         applyNotificationIconsTint();
     }
 
