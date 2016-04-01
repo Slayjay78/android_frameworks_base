@@ -3628,6 +3628,12 @@ public final class Settings {
         public static final String DOZE_BRIGHTNESS = "doze_brightness";
 
         /**
+         * Require double tap instead of simple tap to wake from Doze pulse screen
+         * @hide
+         */
+        public static final String DOZE_WAKEUP_DOUBLETAP = "doze_wakeup_doubletap";
+
+        /**
          * Whether to hide the clock, show it in the right or left
          * position or show it in the center
          * 0: don't show the clock
