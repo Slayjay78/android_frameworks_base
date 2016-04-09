@@ -122,4 +122,7 @@
 
     <!-- bt only connected switch -->
     <string name="status_bar_btcon">Bluetooth only when connected</string>
+
+    <!-- Heads up snooze toast -->
+    <string name="heads_up_snooze_message">Heads up is snoozing for <xliff:g id="number">%d</xliff:g> minutes.</string>
 </resources>
